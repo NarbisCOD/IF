@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-char usuario_1[]="Narbis";
-char usuario_2[]="Amelia";
-char usuario_3[]="Merida";
-
-int CLAVE_1 = 123;
-int CLAVE_2 = 456;
-int CLAVE_3 = 789;
+const int CLAVE_1 = 123;
+const int CLAVE_2 = 456;
+const int CLAVE_3 = 789;
 
 int main(){
+
+    char usuario_1[]="Narbis";
+    char usuario_2[]="Amelia";
+    char usuario_3[]="Merida";
 
     char usuario[0];
     int clave_ingresada = -1;

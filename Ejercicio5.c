@@ -14,7 +14,7 @@ int main (){
     int cubo_caldo=-1;
 
 
-    printf("Indique si tiene los siguiente ingredientes para hacer una sopa: si o no \n");
+    printf("Indique si tiene los siguiente ingredientes para hacer una sopa:digite [1]SI o [2]NO \n");
 	printf ("Tiene verduras?\n");
 	scanf("%i", &verduras);
         if (verduras==SI_TIENE){
@@ -23,10 +23,17 @@ int main (){
                 if (agua==SI_TIENE){
                     printf ("Tiene condimentos?\n");
                     scanf("%i", &condimentos);
-                    if ((condimentos==SI_TIENE)||(condimentos==NO_TIENE)){
+                    if (condimentos==SI_TIENE){
+                        printf ("Tiene cubo de caldo?\n");
+                        scanf("%i", &cubo_caldo);      
+                        if (cubo_caldo==SI_TIENE){
+                            printf (MENJ_1);
+                        }else{
+                            printf (MENJ_1);
+                        }
+                    }else if(condimentos==NO_TIENE){
                         printf ("Tiene cubo de caldo?\n");
                         scanf("%i", &cubo_caldo);
-                        fflush(stdin); 
                         if (cubo_caldo==SI_TIENE){
                             printf (MENJ_1);
                         }else{
@@ -36,7 +43,7 @@ int main (){
                 }else{
                     printf (MENJ_2);
                 }
-         }else{
+        }else{
          printf(MENJ_2);
         }
 return 0;

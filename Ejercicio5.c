@@ -3,33 +3,44 @@
 #define MENJ_1 "A cocinar!!"
 #define MENJ_2 "Ups..Faltan Ingredientes"
 
+const int SI_TIENE=1;
+const int NO_TIENE=2;
 
 int main (){
 
-    char si_tiene[]="si";
-    char no_tiene[]="no";
+    int verduras=-1;
+    int agua=-1;
+    int condimentos=-1;
+    int cubo_caldo=-1;
 
-    char verduras[5];
-    char agua[5];
-    char condimentos[5];
-    char cubo_caldo[5];
 
     printf("Indique si tiene los siguiente ingredientes para hacer una sopa: si o no \n");
 	printf ("Tiene verduras?\n");
-	scanf("%[^\n]", verduras);
-	fflush(stdin);
-        if (verduras==si_tiene);
+	scanf("%i", &verduras);
+        if (verduras==SI_TIENE){
         	printf ("Tiene agua?\n");
-	        scanf("%[^\n]", agua);
-	        fflush(stdin);
-            if (agua==si_tiene);
-                printf ("Tiene condimentos?\n");
-                scanf("%[^\n]", condimentos);
-                fflush(stdin);
-                printf (MENJ_1);
-
+	        scanf("%i", &agua);
+                if (agua==SI_TIENE){
+                    printf ("Tiene condimentos?\n");
+                    scanf("%i", &condimentos);
+                    if ((condimentos==SI_TIENE)||(condimentos==NO_TIENE)){
+                        printf ("Tiene cubo de caldo?\n");
+                        scanf("%i", &cubo_caldo);
+                        fflush(stdin); 
+                        if (cubo_caldo==SI_TIENE){
+                            printf (MENJ_1);
+                        }else{
+                            printf (MENJ_2);
+                        }
+                    }
+                }else{
+                    printf (MENJ_2);
+                }
+         }else{
+         printf(MENJ_2);
+        }
 return 0;
+}	
 
-}
 
 
